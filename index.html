@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Malla Interactiva — Enfermería</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand-mark">ENF</div>
+  <div><h1>Carrera de Enfermería</h1><p>Malla curricular interactiva</p></div>
+</header>
+
+<section class="dashboard">
+  <div class="progress-card">
+    <div class="progress-info"><strong id="progressText">0%</strong><span>avance por créditos</span></div>
+    <div class="progress-track"><div id="progressBar"></div></div>
+    <small id="creditText">0 / 300 créditos aprobados</small>
+  </div>
+  <div class="legend">
+    <button data-filter="all">Todos</button>
+    <button data-filter="approved"><i class="dot approved"></i>Aprobados</button>
+    <button data-filter="current"><i class="dot current"></i>Cursando</button>
+    <button data-filter="available"><i class="dot available"></i>Disponibles</button>
+    <button data-filter="blocked"><i class="dot blocked"></i>Bloqueados</button>
+  </div>
+  <button id="resetBtn" class="reset-btn">Restablecer</button>
+</section>
+
+<div class="hint">
+  <strong>Cómo usarla:</strong> haz clic en un ramo para cambiar su estado. Al seleccionar un ramo se resaltan sus
+  <strong>prerrequisitos</strong> y los ramos que <strong>desbloquea</strong>. Un ramo queda disponible cuando todos sus requisitos están aprobados.
+</div>
+
+<main id="curriculum"></main>
+
+<div id="modalBackdrop" class="modal-backdrop" hidden>
+  <div class="modal">
+    <button class="close" id="closeModal">×</button>
+    <span id="modalSemester" class="modal-semester"></span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalCredits"></p>
+    <div id="modalReq"></div>
+    <div class="status-buttons">
+      <button data-status="pending">Pendiente</button>
+      <button data-status="current">Cursando</button>
+      <button data-status="approved">Aprobado</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>Ciclo Básico</strong> · 120 Cr
+  <span>→</span><strong>Ciclo Especializado</strong> · 240 Cr
+  <span>→</span><strong>Ciclo Profesional</strong> · 300 Cr
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
